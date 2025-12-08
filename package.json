@@ -1,0 +1,27 @@
+{
+  "name": "backend-course",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000b\u0000a\u0000c\u0000k\u0000e\u0000n\u0000d\u0000-\u0000c\u0000o\u0000u\u0000r\u0000s\u0000e\u0000\r\u0000 \u0000\r\u0000 \u0000B\u0000a\u0000c\u0000k\u0000e\u0000n\u0000d\u0000 \u0000J\u0000o\u0000u\u0000r\u0000n\u0000e\u0000y\u0000 \u0000s\u0000t\u0000a\u0000r\u0000t\u0000s\u0000 \u0000t\u0000o\u0000d\u0000a\u0000y\u0000 \u00005\u0000t\u0000h\u0000 \u0000o\u0000f\u0000 \u0000D\u0000e\u0000c\u0000e\u0000m\u0000b\u0000e\u0000r\u0000 \u00002\u00000\u00002\u00005\u0000\r\u0000 \u0000\r\u0000 \u0000t\u0000e\u0000s\u0000t\u0000i\u0000n\u0000g\u0000 \u0000\r\u0000 \u0000t\u0000e\u0000s\u0000t\u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lacctoff/backend-course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lacctoff/backend-course/issues"
+  },
+  "homepage": "https://github.com/Lacctoff/backend-course#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
