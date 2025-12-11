@@ -18,10 +18,13 @@
     "url": "https://github.com/Lacctoff/backend-course/issues"
   },
   "homepage": "https://github.com/Lacctoff/backend-course#readme",
+  "type": "module",
   "dependencies": {
+    "@prisma/client": "^6.19.0",
     "express": "^5.2.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.11"
+    "nodemon": "^3.1.11",
+    "prisma": "^6.19.0"
   }
 }

@@ -6,3 +6,9 @@
 
 # nodemon file
 /nodemon.json
+/src/generated/prisma
+
+
+# log files
+*.txt
+*.log
