@@ -1,8 +1,12 @@
 import express from 'express';
+import { config } from 'dotenv';
+import { connectDB, disconnectDB } from './config/db.js';
 
 // Import Routes
 import movieRoutes from './routes/movieRoutes.js';
 
+config();
+connectDB();
 
 const app = express();
 
@@ -18,14 +22,27 @@ app.listen(PORT, () => {
 })
 
 
-// we know that there are methods like GET, POST, PUT, DELETE, PATCH
+//Handle unhandled promise rejections (for instance, database connection errors)
+process.on('unhandledRejection', (err) => {
+  console.error(`Unhandled Rejection: ${err}`)
+  server.close(async () => {
+    await disconnectDB();
+    process.exit(1);
+  })
+  });
 
-// This project is gonna be a movie watchlist app and it is going to have the following features:
+// Handle uncaught exceptions
+process.on('uncaughtException', async (err) => {
+  console.error(`Uncaught Exception: ${err}`);
+  await disconnectDB();
+  process.exit(1);
+});
 
-// AUTH - SIGNUP, SignIN
-
-// MOVIES - Getting all movies
-
-// USER - Profile
-
-// WATCHLIST - Add movie to watchlist, Get all movies in watchlist, Remove movie from watchlist
+// Handle graceful shutdown
+process.on('SIGTERM', async () => {
+  console.log('SIGTERM signal received: closing HTTP server');
+  server.close(async () => {
+    await disconnectDB();
+    process.exit(0);
+  });
+});
