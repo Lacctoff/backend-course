@@ -11,13 +11,17 @@ connectDB();
 
 const app = express();
 
-const PORT = 5001;
+
+
+// Body parsing middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // API routes
 app.use("/movies", movieRoutes);
 app.use("/auth", authRoutes)
 
-
+const PORT = 5001;
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
