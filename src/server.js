@@ -1,6 +1,7 @@
 import express from 'express';
 import { config } from 'dotenv';
 import { connectDB, disconnectDB } from './config/db.js';
+import "dotenv/config";
 
 // Import Routes
 import movieRoutes from './routes/movieRoutes.js';
@@ -23,9 +24,10 @@ app.use("/auth", authRoutes)
 
 const PORT = 5001;
 // Start the server
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
-})
+});
+
 
 
 //Handle unhandled promise rejections (for instance, database connection errors)

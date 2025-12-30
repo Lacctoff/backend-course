@@ -12,3 +12,6 @@
 # log files
 *.txt
 *.log
+
+# Prisma
+/generated
