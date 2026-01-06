@@ -6,6 +6,7 @@ import "dotenv/config";
 // Import Routes
 import movieRoutes from './routes/movieRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import watchlistRoutes from './routes/watchlistRoutes.js'
 
 config();
 connectDB();
@@ -18,9 +19,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// API routes
+// API routes those /name is anything I want to call the url. please take note
 app.use("/movies", movieRoutes);
-app.use("/auth", authRoutes)
+app.use("/auth", authRoutes);
+app.use("/watchlist", watchlistRoutes)
 
 const PORT = 5001;
 // Start the server
